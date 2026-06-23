@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>お知らせの投稿マニュアル｜ウェブつく</title>
+<style>
+  :root{
+    --navy:#0F2A4A; --green:#2E9E4F; --line-green:#06C755;
+    --ink:#1f2d3d; --sub:#6b7785; --bd:#e4e8ee; --bg:#eef1f5; --card:#fff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.7;-webkit-text-size-adjust:100%}
+  .wrap{max-width:680px;margin:0 auto;padding:0 0 64px}
+  header{background:linear-gradient(135deg,#0F2A4A,#1b3f63);color:#fff;padding:30px 22px 26px}
+  header .kicker{font-size:13px;letter-spacing:.08em;opacity:.85;margin:0 0 6px}
+  header h1{font-size:24px;margin:0 0 10px;font-weight:800}
+  header p{margin:0;font-size:14px;opacity:.92}
+  .body{padding:22px 16px 0}
+  .lead{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:16px;margin:0 0 22px;font-size:15px}
+  .lead b{color:var(--navy)}
+  .start{display:flex;gap:10px;align-items:flex-start;background:#eafaef;border:1px solid #bfe6cb;border-radius:12px;padding:13px 14px;margin:0 0 26px}
+  .start .ic{font-size:20px;line-height:1.3}
+  .start div{font-size:14px}
+  h2.sec{font-size:15px;color:var(--navy);margin:30px 4px 12px;padding-left:11px;border-left:4px solid var(--green);font-weight:800}
+  .step{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:16px 15px;margin:0 0 16px;box-shadow:0 1px 2px rgba(20,40,70,.04)}
+  .step-h{display:flex;align-items:center;gap:10px;margin:0 0 4px}
+  .num{flex:0 0 auto;width:28px;height:28px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center}
+  .step-h h3{font-size:16px;margin:0;font-weight:800}
+  .step .desc{font-size:14px;color:var(--sub);margin:2px 0 12px}
+  .chat{border-radius:14px;padding:12px;margin-top:6px;background:#9db2d6}
+  .row{display:flex;margin:7px 0;align-items:flex-end}
+  .row.me{justify-content:flex-end}
+  .av{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;font-size:11px;
+    display:flex;align-items:center;justify-content:center;margin-right:7px;font-weight:700}
+  .bub{max-width:78%;padding:9px 12px;border-radius:16px;font-size:14px;white-space:pre-wrap}
+  .bub.bot{background:#fff;border-top-left-radius:4px}
+  .bub.me{background:var(--line-green);color:#fff;border-top-right-radius:4px}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 2px;justify-content:flex-end}
+  .chip{background:#fff;border:1px solid #cdd6e3;color:var(--navy);border-radius:18px;padding:5px 12px;font-size:12.5px;font-weight:600}
+  .branch{display:flex;gap:10px;margin-top:6px}
+  .branch .col{flex:1;border:1px solid var(--bd);border-radius:12px;padding:12px;background:#fafbfc}
+  .branch .col h4{margin:0 0 6px;font-size:14px;color:var(--navy)}
+  .branch .col p{margin:0;font-size:12.5px;color:var(--sub)}
+  .tip{display:flex;gap:8px;background:#fff7e6;border:1px solid #ffe2a8;border-radius:10px;padding:10px 12px;margin-top:11px;font-size:13px}
+  .tip b{color:#9a6a00}
+  .preview-acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+  .pbtn{flex:1 1 45%;text-align:center;border-radius:9px;padding:9px;font-size:13px;font-weight:700;color:#fff}
+  .pbtn.pub{background:#2196F3}.pbtn.draft{background:#4CAF50}.pbtn.edit{background:#607d8b}.pbtn.fix{background:#90a4ae}
+  .done{background:var(--navy);color:#fff;border-radius:16px;padding:18px;margin:8px 0 0;text-align:center}
+  .done .big{font-size:17px;font-weight:800;margin-bottom:4px}
+  .done small{opacity:.85}
+  footer{margin:28px 16px 0;padding:18px;background:#fff;border:1px dashed #c7d0dc;border-radius:14px;text-align:center;font-size:14px;color:var(--sub)}
+  footer b{color:var(--navy)}
+  .faq{margin:22px 16px 0}
+  .faq details{background:#fff;border:1px solid var(--bd);border-radius:12px;padding:4px 14px;margin-bottom:9px}
+  .faq summary{font-weight:700;font-size:14px;padding:11px 0;cursor:pointer;color:var(--navy)}
+  .faq p{margin:0 0 12px;font-size:13.5px;color:var(--sub)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="kicker">📣 ウェブつく サポートマニュアル</p>
+    <h1>お知らせの投稿</h1>
+    <p>大会の告知、練習予定の変更、イベント案内など。LINEで「お知らせ」と送るだけでホームページに掲載できます。</p>
+  </header>
+
+  <div class="body">
+    <div class="lead">
+      本文は <b>AIにおまかせ</b> でも <b>自分で入力</b> でもOK。所要時間は <b>約2〜4分</b>。スマホのLINEだけで完結します。
+    </div>
+
+    <div class="start">
+      <div class="ic">▶️</div>
+      <div><b>はじめ方</b><br>下のメニューの「📣 お知らせ」をタップ、または「お知らせ」とそのまま送信します。</div>
+    </div>
+
+    <h2 class="sec">投稿の流れ</h2>
+
+    <div class="step">
+      <div class="step-h"><div class="num">1</div><h3>「お知らせ」と送る</h3></div>
+      <div class="desc">入力がはじまり、カテゴリーの選択肢が表示されます。</div>
+      <div class="chat">
+        <div class="row me"><div class="bub me">お知らせ</div></div>
+        <div class="row"><div class="av">📣</div><div class="bub bot">お知らせのカテゴリーを選んでください。
+一覧にない場合は「他のカテゴリーを入力」から検索できます。</div></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-h"><div class="num">2</div><h3>カテゴリーを選ぶ</h3></div>
+      <div class="desc">ボタンから選びます。新しく作りたいときは「新規カテゴリー追加」、一覧に無いときは「他のカテゴリーを入力」で検索できます。</div>
+      <div class="chat">
+        <div class="chips"><span class="chip">お知らせ</span><span class="chip">イベント情報</span><span class="chip">大会結果</span><span class="chip">新規カテゴリー追加</span><span class="chip">他のカテゴリーを入力</span></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-h"><div class="num">3</div><h3>タイトルを入力</h3></div>
+      <div class="desc">お知らせの見出しになります。ひと目で内容が分かる短い文がおすすめです。</div>
+      <div class="chat">
+        <div class="row"><div class="av">📣</div><div class="bub bot">「イベント情報」を設定しました。
+お知らせのタイトルを入力してください。</div></div>
+        <div class="row me"><div class="bub me">夏合宿の参加者を募集します</div></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-h"><div class="num">4</div><h3>本文の作り方を選ぶ</h3></div>
+      <div class="desc">「AIで作成」か「手動で作成」を選びます。</div>
+      <div class="chat">
+        <div class="row"><div class="av">📣</div><div class="bub bot">本文はどちらで作成しますか？</div></div>
+        <div class="chips"><span class="chip">AIで作成</span><span class="chip">手動で作成</span></div>
+      </div>
+      <div class="branch">
+        <div class="col"><h4>🤖 AIで作成</h4><p>要点（日時・場所・対象など）を箇条書きで送ると、AIが読みやすい本文に仕上げます。</p></div>
+        <div class="col"><h4>✍️ 手動で作成</h4><p>本文をそのまま入力。改行もそのまま反映されます。文章が決まっている時に。</p></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-h"><div class="num">5</div><h3>本文を入力（要点 or 本文）</h3></div>
+      <div class="desc">「AIで作成」を選んだ場合は、要点を送るだけでOKです。</div>
+      <div class="chat">
+        <div class="row"><div class="av">📣</div><div class="bub bot">AIで本文を作成するため、お知らせの要点を入力してください。</div></div>
+        <div class="row me"><div class="bub me">8/10〜12 河口湖
+小学生対象 締切7/20
+参加費5000円</div></div>
+        <div class="row"><div class="av">📣</div><div class="bub bot">AIで本文を作成しています。1分ほどお待ちください。</div></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-h"><div class="num">6</div><h3>アイキャッチ画像を送る</h3></div>
+      <div class="desc">お知らせのトップ画像を <b>1枚</b> 送ります。なければ「なし」と送ってください。</div>
+      <div class="chat">
+        <div class="row"><div class="av">📣</div><div class="bub bot">アイキャッチ画像を1枚送ってください。</div></div>
+        <div class="chips"><span class="chip">なし</span></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-h"><div class="num">7</div><h3>本文中の画像（任意）</h3></div>
+      <div class="desc">本文の中にも画像を入れられます。1枚ずつ送り、終わったら「完了」。入れない場合は「なし」。</div>
+      <div class="chat">
+        <div class="row"><div class="av">📣</div><div class="bub bot">本文内に追加したい画像があれば送ってください。
+複数ある場合は1枚ずつ送り、最後に「完了」と送ってください。</div></div>
+        <div class="chips"><span class="chip">完了</span><span class="chip">なし</span></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-h"><div class="num">8</div><h3>内容を確認して投稿</h3></div>
+      <div class="desc">プレビューが届きます。内容を見て、下のボタンで操作します。</div>
+      <div class="preview-acts">
+        <span class="pbtn pub">公開する</span>
+        <span class="pbtn draft">下書き保存</span>
+        <span class="pbtn edit">ブラウザで編集</span>
+        <span class="pbtn fix">修正する</span>
+      </div>
+      <div class="tip"><div>✏️</div><div><b>公開する</b>＝サイトに掲載／<b>下書き保存</b>＝あとで確認／<b>ブラウザで編集</b>＝細かく手直し／<b>修正する</b>＝文章で修正指示を送る。</div></div>
+    </div>
+
+    <div class="step">
+      <div class="step-h"><div class="num">9</div><h3>完了</h3></div>
+      <div class="desc">「公開する」を押すと掲載され、URLが届きます。これで完了です！</div>
+      <div class="done"><div class="big">🎉 お知らせを公開しました！</div><small>掲載ページのURLがLINEに届きます</small></div>
+    </div>
+  </div>
+
+  <div class="faq">
+    <h2 class="sec" style="margin-left:0">よくある質問</h2>
+    <details><summary>途中でやめたい / やり直したい</summary><p>「キャンセル」と送ると、いつでも最初からやり直せます。</p></details>
+    <details><summary>AIの文章を直したい</summary><p>プレビューで「修正する」を押し、「もっと丁寧に」「日時を強調して」などを文章で送ると作り直します。「ブラウザで編集」で直接手直しもできます。</p></details>
+    <details><summary>カテゴリーが見つからない</summary><p>「他のカテゴリーを入力」で一部だけ入力すると検索できます（例:「イベ」→「イベント情報」）。無い場合は「新規カテゴリー追加」で作れます。</p></details>
+    <details><summary>画像は何枚まで？</summary><p>トップ画像が1枚、本文中の画像は複数OKです（1枚ずつ送って最後に「完了」）。</p></details>
+  </div>
+
+  <footer>
+    困ったときは、LINEで <b>「お問い合わせ」</b> と送ってください。<br>担当者がこのトーク内で直接ご返信します ⚽
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>試合結果の投稿マニュアル｜ウェブつく</title>
+<style>
+  :root{
+    --navy:#0F2A4A; --green:#2E9E4F; --line-green:#06C755;
+    --ink:#1f2d3d; --sub:#6b7785; --bd:#e4e8ee; --bg:#eef1f5; --card:#fff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.7;-webkit-text-size-adjust:100%}
+  .wrap{max-width:680px;margin:0 auto;padding:0 0 64px}
+  header{background:linear-gradient(135deg,#0F2A4A,#1b3f63);color:#fff;padding:30px 22px 26px}
+  header .kicker{font-size:13px;letter-spacing:.08em;opacity:.85;margin:0 0 6px}
+  header h1{font-size:24px;margin:0 0 10px;font-weight:800}
+  header p{margin:0;font-size:14px;opacity:.92}
+  .body{padding:22px 16px 0}
+  .lead{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:16px 16px;margin:0 0 22px;font-size:15px}
+  .lead b{color:var(--navy)}
+  .start{display:flex;gap:10px;align-items:flex-start;background:#eafaef;border:1px solid #bfe6cb;border-radius:12px;padding:13px 14px;margin:0 0 26px}
+  .start .ic{font-size:20px;line-height:1.3}
+  .start div{font-size:14px}
+  h2.sec{font-size:15px;color:var(--navy);margin:30px 4px 12px;padding-left:11px;border-left:4px solid var(--green);font-weight:800}
+  .step{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:16px 15px;margin:0 0 16px;box-shadow:0 1px 2px rgba(20,40,70,.04)}
+  .step-h{display:flex;align-items:center;gap:10px;margin:0 0 4px}
+  .num{flex:0 0 auto;width:28px;height:28px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center}
+  .step-h h3{font-size:16px;margin:0;font-weight:800}
+  .step .desc{font-size:14px;color:var(--sub);margin:2px 0 12px}
+  /* チャット風 */
+  .chat{background:#aeb9e8;background:#9db2d6;border-radius:14px;padding:12px 12px;margin-top:6px;
+    background-image:linear-gradient(#9db2d6,#9db2d6)}
+  .row{display:flex;margin:7px 0;align-items:flex-end}
+  .row.me{justify-content:flex-end}
+  .av{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;font-size:11px;
+    display:flex;align-items:center;justify-content:center;margin-right:7px;font-weight:700}
+  .bub{max-width:78%;padding:9px 12px;border-radius:16px;font-size:14px;white-space:pre-wrap}
+  .bub.bot{background:#fff;border-top-left-radius:4px}
+  .bub.me{background:var(--line-green);color:#fff;border-top-right-radius:4px}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 2px;justify-content:flex-end}
+  .chip{background:#fff;border:1px solid #cdd6e3;color:var(--navy);border-radius:18px;padding:5px 12px;font-size:12.5px;font-weight:600}
+  .tip{display:flex;gap:8px;background:#fff7e6;border:1px solid #ffe2a8;border-radius:10px;padding:10px 12px;margin-top:11px;font-size:13px}
+  .tip b{color:#9a6a00}
+  .preview-acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+  .pbtn{flex:1 1 45%;text-align:center;border-radius:9px;padding:9px;font-size:13px;font-weight:700;color:#fff}
+  .pbtn.pub{background:#2196F3}.pbtn.draft{background:#4CAF50}.pbtn.re{background:#90a4ae}.pbtn.edit{background:#607d8b}
+  .done{background:var(--navy);color:#fff;border-radius:16px;padding:18px;margin:8px 0 0;text-align:center}
+  .done .big{font-size:17px;font-weight:800;margin-bottom:4px}
+  .done small{opacity:.85}
+  footer{margin:28px 16px 0;padding:18px;background:#fff;border:1px dashed #c7d0dc;border-radius:14px;text-align:center;font-size:14px;color:var(--sub)}
+  footer b{color:var(--navy)}
+  .faq{margin:22px 16px 0}
+  .faq details{background:#fff;border:1px solid var(--bd);border-radius:12px;padding:4px 14px;margin-bottom:9px}
+  .faq summary{font-weight:700;font-size:14px;padding:11px 0;cursor:pointer;color:var(--navy)}
+  .faq p{margin:0 0 12px;font-size:13.5px;color:var(--sub)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="kicker">⚽ ウェブつく サポートマニュアル</p>
+    <h1>試合結果の投稿</h1>
+    <p>LINEで「試合結果」と送るだけ。質問に答えていくと、AIが記事を作ってホームページに投稿します。</p>
+  </header>
+
+  <div class="body">
+    <div class="lead">
+      所要時間は <b>約3〜5分</b>。むずかしい操作はありません。<b>順番に質問が届くので、それに答えるだけ</b>です。
+      パソコンは不要、スマホのLINEだけで完結します。
+    </div>
+
+    <div class="start">
+      <div class="ic">▶️</div>
+      <div><b>はじめ方</b><br>下のメニューの「⚽ 試合結果」をタップ、または「試合結果」とそのまま送信します。</div>
+    </div>
+
+    <h2 class="sec">投稿の流れ</h2>
+
+    <div class="step">
+      <div class="step-h"><div class="num">1</div><h3>「試合結果」と送る</h3></div>
+      <div class="desc">入力がはじまります。登録済みの「試合予定」があれば、そこから選んで続けることもできます。</div>
+      <div class="chat">
+        <div class="row me"><div class="bub me">試合結果</div></div>
+        <div class="row"><div class="av">⚽</div><div class="bub bot">⚽ 試合結果の入力を開始します。少々お待ちください...</div></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-h"><div class="num">2</div><h3>カテゴリーを選ぶ</h3></div>
+      <div class="desc">どのカテゴリー（学年・カテゴリ等）の試合かを選びます。表示されるボタンから選んでください。</div>
+      <div class="chat">
+        <div class="row"><div class="av">⚽</div><div class="bub bot">どのカテゴリーの報告ですか？</div></div>
+        <div class="chips"><span class="chip">トップチーム</span><span class="chip">ジュニアユース</span><span class="chip">スクール</span></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-h"><div class="num">3</div><h3>日付を選ぶ</h3></div>
+      <div class="desc">「今日」「昨日」のボタンが使えます。別の日は <b>4/1</b> のように入力します。</div>
+      <div class="chat">
+        <div class="row"><div class="av">⚽</div><div class="bub bot">⚽ 試合の日付を教えてください。</div></div>
+        <div class="chips"><span class="chip">今日 (6/23)</span><span class="chip">昨日 (6/22)</span></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-h"><div class="num">4</div><h3>キックオフ時間</h3></div>
+      <div class="desc">ボタンを選ぶか、<b>14:00</b> の形式で入力。決まっていなければ「時間未定」。</div>
+      <div class="chat">
+        <div class="row"><div class="av">⚽</div><div class="bub bot">⏰ キックオフ時間を教えてください（例: 14:00）</div></div>
+        <div class="chips"><span class="chip">10:00</span><span class="chip">13:00</span><span class="chip">14:00</span><span class="chip">時間未定</span></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-h"><div class="num">5</div><h3>大会名</h3></div>
+      <div class="desc">大会名を入力します。練習試合などは「なし」を選べばOKです。</div>
+      <div class="chat">
+        <div class="row"><div class="av">⚽</div><div class="bub bot">大会名を教えてください。</div></div>
+        <div class="chips"><span class="chip">なし（練習試合等）</span></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-h"><div class="num">6</div><h3>対戦相手</h3></div>
+      <div class="desc">相手チーム名をそのまま入力します。</div>
+      <div class="chat">
+        <div class="row"><div class="av">⚽</div><div class="bub bot">対戦相手のチーム名を教えてください。</div></div>
+        <div class="row me"><div class="bub me">FC ○○ジュニア</div></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-h"><div class="num">7</div><h3>試合会場</h3></div>
+      <div class="desc">会場名を入力。未定のときは「会場未定」「スキップ」が使えます。</div>
+      <div class="chat">
+        <div class="row"><div class="av">⚽</div><div class="bub bot">🏟 試合会場を教えてください（例: ◯◯総合運動公園）</div></div>
+        <div class="chips"><span class="chip">会場未定</span><span class="chip">スキップ</span></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-h"><div class="num">8</div><h3>スコア</h3></div>
+      <div class="desc"><b>3-1</b> のように入力します。</div>
+      <div class="chat">
+        <div class="row"><div class="av">⚽</div><div class="bub bot">試合のスコアを教えてください（例: 3-1）
+※必ず「自チーム-相手」の順で入力してください。</div></div>
+        <div class="row me"><div class="bub me">3-1</div></div>
+      </div>
+      <div class="tip"><div>⚠️</div><div><b>必ず「自チーム-相手」の順</b>で入力してください。逆にすると勝敗が逆の記事になります。</div></div>
+    </div>
+
+    <div class="step">
+      <div class="step-h"><div class="num">9</div><h3>得点者</h3></div>
+      <div class="desc"><b>田中2、鈴木1</b> のように、名前と得点数を入力。いなければ「得点者なし」。</div>
+      <div class="chat">
+        <div class="row"><div class="av">⚽</div><div class="bub bot">得点者を教えてください（例: 田中2、鈴木1）</div></div>
+        <div class="chips"><span class="chip">得点者なし</span><span class="chip">不明</span></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-h"><div class="num">10</div><h3>ハイライト・感想</h3></div>
+      <div class="desc">ひとことでOK。記事の内容がより充実します。なくても大丈夫です。</div>
+      <div class="chat">
+        <div class="row"><div class="av">⚽</div><div class="bub bot">試合のハイライトや感想を短く教えてください。</div></div>
+        <div class="row me"><div class="bub me">後半に逆転、最後まで集中できた試合でした</div></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-h"><div class="num">11</div><h3>試合の展開</h3></div>
+      <div class="desc">試合全体の流れを選びます。記事の表現に反映されます。</div>
+      <div class="chat">
+        <div class="row"><div class="av">⚽</div><div class="bub bot">試合全体の展開はどうでしたか？</div></div>
+        <div class="chips"><span class="chip">終始押し込んだ</span><span class="chip">一進一退の均衡</span><span class="chip">流れが変化した</span></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-h"><div class="num">12</div><h3>文章スタイル</h3></div>
+      <div class="desc">記事のトーンを選びます。チームの雰囲気に合うものでOKです。</div>
+      <div class="chat">
+        <div class="row"><div class="av">⚽</div><div class="bub bot">記事の文章スタイルを選んでください。</div></div>
+        <div class="chips"><span class="chip">熱血・応援</span><span class="chip">業務連絡・報告</span><span class="chip">ファン向けエンタメ</span><span class="chip">公式プロフェッショナル</span></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-h"><div class="num">13</div><h3>写真を送る</h3></div>
+      <div class="desc">記事のトップ画像（アイキャッチ）を <b>1枚</b> 送ります。なければ「スキップ」。</div>
+      <div class="chat">
+        <div class="row"><div class="av">⚽</div><div class="bub bot">最後に、アイキャッチ画像を1枚送ってください。</div></div>
+        <div class="chips"><span class="chip">画像なしでスキップ</span></div>
+      </div>
+      <div class="tip"><div>📷</div><div>写真はLINEの「+」やカメラから送れます。横向き・明るい写真がおすすめです。</div></div>
+    </div>
+
+    <div class="step">
+      <div class="step-h"><div class="num">14</div><h3>AIが記事を作成 → 内容を確認</h3></div>
+      <div class="desc">2分ほどでAIが記事を作成し、プレビューが届きます。内容を見て、下のボタンで操作します。</div>
+      <div class="chat">
+        <div class="row"><div class="av">⚽</div><div class="bub bot">情報を整理して記事を作成しています...
+2分ほどお待ちください。</div></div>
+      </div>
+      <div class="preview-acts">
+        <span class="pbtn pub">公開する</span>
+        <span class="pbtn draft">下書き保存</span>
+        <span class="pbtn re">再生成</span>
+        <span class="pbtn edit">編集する</span>
+      </div>
+      <div class="tip"><div>✏️</div><div><b>公開する</b>＝サイトに掲載／<b>下書き保存</b>＝あとで確認／<b>再生成</b>＝別の文章で作り直し／<b>編集する</b>＝ブラウザで手直し。文章で「もっと短く」などの修正指示も送れます。</div></div>
+    </div>
+
+    <div class="step">
+      <div class="step-h"><div class="num">15</div><h3>完了</h3></div>
+      <div class="desc">「公開する」を押すと投稿され、記事のURLが届きます。これで完了です！</div>
+      <div class="done"><div class="big">🎉 投稿が完了しました！</div><small>記事のURLがLINEに届きます</small></div>
+    </div>
+  </div>
+
+  <div class="faq">
+    <h2 class="sec" style="margin-left:0">よくある質問</h2>
+    <details><summary>途中でやめたい / やり直したい</summary><p>「キャンセル」と送ると、いつでも最初からやり直せます。</p></details>
+    <details><summary>「試合予定」を先に登録していた場合は？</summary><p>「試合結果」を始めると「予定から選ぶ／新しく入力する」が出ます。予定を選ぶと、対戦相手や日付などが引き継がれ、スコア入力から再開できます（予定の投稿がそのまま結果に更新されます）。</p></details>
+    <details><summary>写真は複数送れますか？</summary><p>試合結果のトップ画像は1枚です。たくさん載せたいときは、公開後にホームページの管理画面から追加できます。</p></details>
+    <details><summary>間違えて公開してしまった</summary><p>「お問い合わせ」と送っていただければ、担当者が対応します。</p></details>
+  </div>
+
+  <footer>
+    困ったときは、LINEで <b>「お問い合わせ」</b> と送ってください。<br>担当者がこのトーク内で直接ご返信します ⚽
+  </footer>
+</div>
+</body>
+</html>
