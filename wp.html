@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ホームページの操作マニュアル｜ウェブつく</title>
+<style>
+  :root{--navy:#0F2A4A;--green:#2E9E4F;--ink:#1f2d3d;--sub:#6b7785;--bd:#e4e8ee;--bg:#eef1f5;--card:#fff}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.75;-webkit-text-size-adjust:100%}
+  .wrap{max-width:680px;margin:0 auto;padding:0 0 64px}
+  header{background:linear-gradient(135deg,#0F2A4A,#1b3f63);color:#fff;padding:30px 22px 26px}
+  header .kicker{font-size:13px;letter-spacing:.08em;opacity:.85;margin:0 0 6px}
+  header h1{font-size:24px;margin:0 0 10px;font-weight:800}
+  header p{margin:0;font-size:14px;opacity:.92}
+  .body{padding:22px 16px 0}
+  .lead{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:16px;margin:0 0 18px;font-size:15px}
+  .lead b{color:var(--navy)}
+  .note{display:flex;gap:10px;align-items:flex-start;background:#eef6ff;border:1px solid #c4ddf5;border-radius:12px;padding:12px 14px;margin:0 0 26px;font-size:13.5px}
+  h2.sec{font-size:15px;color:var(--navy);margin:30px 4px 12px;padding-left:11px;border-left:4px solid var(--green);font-weight:800}
+  .step{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:16px 15px;margin:0 0 16px;box-shadow:0 1px 2px rgba(20,40,70,.04)}
+  .step-h{display:flex;align-items:center;gap:10px;margin:0 0 8px}
+  .num{flex:0 0 auto;width:28px;height:28px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center}
+  .step-h h3{font-size:16px;margin:0;font-weight:800}
+  .step p{font-size:14px;margin:6px 0}
+  .step ol,.step ul{margin:6px 0 6px;padding-left:1.3em;font-size:14px}
+  .step li{margin:3px 0}
+  figure{margin:12px 0 4px}
+  figure img{width:100%;height:auto;border:1px solid #d4dae3;border-radius:10px;box-shadow:0 2px 8px rgba(20,40,70,.08);display:block}
+  figcaption{font-size:12px;color:var(--sub);margin-top:6px;text-align:center}
+  .red{color:#e53935;font-weight:700}
+  .tip{display:flex;gap:8px;background:#fff7e6;border:1px solid #ffe2a8;border-radius:10px;padding:10px 12px;margin-top:11px;font-size:13px}
+  .tip b{color:#9a6a00}
+  footer{margin:28px 16px 0;padding:18px;background:#fff;border:1px dashed #c7d0dc;border-radius:14px;text-align:center;font-size:14px;color:var(--sub)}
+  footer b{color:var(--navy)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="kicker">🌐 ウェブつく サポートマニュアル</p>
+    <h1>ホームページの操作</h1>
+    <p>ログイン・記事の編集・写真の差し替え・新規投稿など、WordPress管理画面の基本操作をまとめました。</p>
+  </header>
+
+  <div class="body">
+    <div class="lead">
+      試合結果・お知らせは <b>LINEから投稿するのが一番かんたん</b>です。このマニュアルは、ブラウザから直接ホームページを編集したいときの操作です。
+    </div>
+    <div class="note"><div>🔑</div><div>ログイン情報（アドレス・ユーザー名・パスワード）が分からないときは、LINEで「お問い合わせ」と送ってください。</div></div>
+
+    <h2 class="sec">1. ログインする</h2>
+    <div class="step">
+      <div class="step-h"><div class="num">1</div><h3>管理画面を開いてログイン</h3></div>
+      <ol>
+        <li>ブラウザで管理画面のアドレスを開きます（例：<code>https://あなたのサイト/wp-admin/</code>）。</li>
+        <li>ユーザー名（またはメールアドレス）とパスワードを入力します。</li>
+        <li><span class="red">「ログイン」</span>ボタンを押します。</li>
+      </ol>
+      <figure><img src="img/01-login.png" alt="ログイン画面"><figcaption>ログイン画面（赤枠が「ログイン」ボタン）</figcaption></figure>
+      <div class="tip"><div>💡</div><div><b>「ログイン状態を保存する」</b>にチェックを入れると、次回から入力を省けます。</div></div>
+    </div>
+
+    <h2 class="sec">2. 管理画面の見方</h2>
+    <div class="step">
+      <div class="step-h"><div class="num">2</div><h3>ダッシュボードと左メニュー</h3></div>
+      <p>ログインすると最初に出るのが「ダッシュボード」です。操作は基本的に<b>左側のメニュー</b>から行います。</p>
+      <ul>
+        <li><b>投稿</b>：お知らせ・ブログ記事の管理</li>
+        <li><b>メディア</b>：写真・画像の管理</li>
+        <li>そのほか、試合管理・選手管理などチーム専用メニュー</li>
+      </ul>
+      <figure><img src="img/02-dashboard.png" alt="ダッシュボード"><figcaption>ダッシュボード（左がメインメニュー）</figcaption></figure>
+    </div>
+
+    <h2 class="sec">3. 記事を編集する</h2>
+    <div class="step">
+      <div class="step-h"><div class="num">3</div><h3>編集したい記事を開く</h3></div>
+      <ol>
+        <li>左メニューの<b>「投稿」→「投稿一覧」</b>を開きます。</li>
+        <li>記事タイトルにマウスを合わせると出る<span class="red">「編集」</span>をクリックします。</li>
+      </ol>
+      <figure><img src="img/03-posts-list.png" alt="投稿一覧"><figcaption>投稿一覧（赤枠の「編集」をクリック）</figcaption></figure>
+    </div>
+    <div class="step">
+      <div class="step-h"><div class="num">4</div><h3>本文を直して保存する</h3></div>
+      <p>本文をその場で書き換えられます。直したら、右上の<span class="red">「更新」</span>（新規の場合は「公開」）を押すと反映されます。</p>
+      <figure><img src="img/04-post-edit.png" alt="記事の編集画面"><figcaption>編集画面（赤枠が保存ボタン）</figcaption></figure>
+      <div class="tip"><div>⚠️</div><div><b>「更新」を押さないと保存されません。</b>編集したら必ず押してください。</div></div>
+    </div>
+
+    <h2 class="sec">4. 写真を変える</h2>
+    <div class="step">
+      <div class="step-h"><div class="num">5</div><h3>アイキャッチ画像（記事のトップ写真）</h3></div>
+      <ol>
+        <li>編集画面の右側にある<span class="red">「アイキャッチ画像を設定」</span>を押します。</li>
+        <li>写真を選ぶ、または新しい写真をアップロードして「設定」。</li>
+        <li>最後に「更新」で保存します。</li>
+      </ol>
+      <figure><img src="img/05-featured-image.png" alt="アイキャッチ画像の設定"><figcaption>右側の「アイキャッチ画像を設定」（赤枠）</figcaption></figure>
+    </div>
+    <div class="step">
+      <div class="step-h"><div class="num">6</div><h3>写真をまとめて管理（メディア）</h3></div>
+      <p>左メニューの<b>「メディア」</b>で、アップロード済みの写真を一覧・追加できます。<span class="red">「メディアファイルを追加」</span>から新しい写真を登録できます。</p>
+      <figure><img src="img/07-media.jpg" alt="メディアライブラリ"><figcaption>メディアライブラリ（赤枠の「追加」から写真を登録）</figcaption></figure>
+      <div class="tip"><div>📷</div><div>写真は明るく横向きのものがおすすめです。大きすぎる場合も自動で調整されます。</div></div>
+    </div>
+
+    <h2 class="sec">5. 新しい記事を作る</h2>
+    <div class="step">
+      <div class="step-h"><div class="num">7</div><h3>ブラウザから新規投稿</h3></div>
+      <ol>
+        <li>左メニューの<b>「投稿」→「新規追加」</b>を開きます。</li>
+        <li>上にタイトル、下に本文を入力します。</li>
+        <li>必要なら写真やアイキャッチ画像を設定します。</li>
+        <li>右上の<span class="red">「公開」</span>を押すとサイトに掲載されます。</li>
+      </ol>
+      <figure><img src="img/06-new-post.png" alt="新規投稿画面"><figcaption>新規投稿（赤枠が「公開」ボタン）</figcaption></figure>
+      <div class="tip"><div>💡</div><div>すぐ公開したくないときは「下書き保存」。試合結果・お知らせは<b>LINEからの投稿</b>のほうが簡単です。</div></div>
+    </div>
+  </div>
+
+  <footer>
+    困ったときは、LINEで <b>「お問い合わせ」</b> と送ってください。<br>担当者がこのトーク内で直接ご返信します ⚽
+  </footer>
+</div>
+</body>
+</html>
